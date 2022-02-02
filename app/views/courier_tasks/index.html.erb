@@ -1,0 +1,62 @@
+<h1>Список поездок</h1>
+
+<% form_tag '', :name => 'f', :method => 'get' do -%>
+  Отображать поездки:
+  <%= select_tag :show_finished,
+    options_for_select([['Действующие', '0'], ['Завершенные', '1']],params[:show_finished]),
+    :onchange => 'f.submit()' %>
+<% end # form -%>
+
+<% if @courier_tasks.size <= 0 %>
+  <h4>Поездки остсутствуют</h4>
+<% else %>
+  <h4>Всего поездок: <%= @courier_tasks_count %></h4>
+  <table>
+    <tr>
+      <th>N&omicron;</th>
+      <th><%= human_attribute "manager" %></th>
+      <th><%= human_attribute "status"  %></th>
+      <th><%= human_attribute "created_at" %></th>
+      <th><%= human_attribute "accepted_at" %></th>
+      <th><%= human_attribute "completed_at" %></th>
+      <th><%= human_attribute "finished_at" %></th>
+      <th><%= human_attribute "bills" %></th>
+      <th><%= human_attribute "client_org" %></th>
+      <th><%= human_attribute "priority" %></th>
+      <th>&nbsp;</th>
+    </tr>
+
+    <% @courier_tasks.each do |courier_task| %>
+      <tr>
+        <td><%=h courier_task.id %></td>
+        <td><%=h courier_task.manager.login %></td>
+        <td style="color: <%= color_status(courier_task.status) %>"><%= human_status(courier_task.status) %></td>
+        <td><%=l courier_task.created_at, :locale => 'ru' %></td>
+        <td><%= courier_task.accepted_at ? l(courier_task.accepted_at, :locale => 'ru') : '-' %></td>
+        <td><%= courier_task.completed_at ? l(courier_task.completed_at, :locale => 'ru') : '-' %></td>
+        <td><%= courier_task.finished_at ? l(courier_task.finished_at, :locale => 'ru') : '-' %></td>
+        <td><%=h courier_task.bills %></td>
+        <td><%=h courier_task.client_org %></td>
+        <td><%=h courier_task.priority %></td>
+        <td>
+          <%= link_to t(:show), courier_task %>
+          <%=
+          if current_user.is_admin?
+            link_to 'Завершить', finish_courier_task_url(courier_task)
+          end
+          %>
+          <%= render :partial => 'manager_row_buttons', :locals => { :task => courier_task } if current_user.is_manager? %>
+          <%= render :partial => 'courier_row_buttons', :locals => { :task => courier_task } if current_user.is_courier? %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end # if %>
+
+<br />
+
+<%= will_paginate @courier_tasks %>
+
+<% if current_user.is_manager?  %>
+  <%= link_to 'Добавить поездку', new_courier_task_path %>
+<% end %>

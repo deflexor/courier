@@ -1,0 +1,33 @@
+ru:
+  edit: "Редактировать"
+  update: "Обновить"
+  delete: "Удалить"
+  show: "Подробнее"
+  back: "К списку поездок"
+  activerecord:
+    models:
+      courier_task: "Курьерские задачи"
+    attributes:
+      comment:
+        author: "Автор"
+        body: "Текст"
+      courier_task:
+        manager: "Менеджер"
+        status: "Статус"
+        priority: "Срочность"
+        line_expences: "Расходы направления"
+        bills: "Счета"
+        subject: "Что доставить/забрать"
+        client_org: "Клиент"
+        client_person: "Контактное лицо"
+        client_phone: "Контактный телефон"
+        client_address: "Подробный адрес, как добраться"
+        placement: "Где находится то, что доставить"
+        deal_info: "Договоренности с клиентом"
+        created_at: "Создана"
+        accepted_at: "Получена"
+        completed_at: "Выполнена"
+        finished_at: "Завершена"
+  time:
+    formats:
+      default: "%d.%m.%Y %H:%M"

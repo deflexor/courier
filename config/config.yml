@@ -1,0 +1,16 @@
+## YAML Template.
+---
+development:
+  listgroups_service_url: http://localhost:3001/
+  listgroups_user: vbHTTY4xxfffBB
+  listgroups_pass: 875TRGREGFDr44##
+  oid_provider: http://localhost:3001/user/
+
+test:
+  perform_authentication: false
+
+production:
+  listgroups_service_url: http://smart.wm.ru/users/
+  listgroups_user: vbHTTY4xxfffBB
+  listgroups_pass: 875TRGREGFDr44##
+  oid_provider: http://smart.wm.ru/users/user/

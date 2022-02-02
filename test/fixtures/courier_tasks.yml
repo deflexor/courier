@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  manager: MyString
+  line_expences: MyString
+  status: MyString
+  bills: MyString
+  client_org: MyString
+  client_person: MyString
+  client_phone: MyString
+  client_address: MyString
+  description: MyText
+  priority: MyString
+
+two:
+  manager: MyString
+  line_expences: MyString
+  status: MyString
+  bills: MyString
+  client_org: MyString
+  client_person: MyString
+  client_phone: MyString
+  client_address: MyString
+  description: MyText
+  priority: MyString

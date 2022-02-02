@@ -1,0 +1,3 @@
+CourierMailer#cancelled_task
+
+Find me in app/views/courier_mailer/cancelled_task.erb

@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  courier_task: 
+  author: MyString
+  body: MyText
+
+two:
+  courier_task: 
+  author: MyString
+  body: MyText

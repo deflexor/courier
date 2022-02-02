@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Курьерский интерфейс: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+  <style type="text/css">
+    #openid_identifier {
+      background: url(<%= image_path 'login-bg.gif' %>) no-repeat #FFF 5px;
+      padding-left: 25px;
+    }
+  </style>
+</head>
+<body>
+
+  <% if current_user %>
+  Авторизован как <%= current_user.login %>, <small><%= link_to 'Выйти', session_url, :method => :delete %></small>
+  <% end %>
+
+<p style="color: green"><%= flash[:notice] %></p>
+<p style="color: red"><%= flash[:error] %></p>
+
+<%= yield %>
+
+</body>
+</html>

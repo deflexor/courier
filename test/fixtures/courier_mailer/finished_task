@@ -1,0 +1,3 @@
+CourierMailer#finished_task
+
+Find me in app/views/courier_mailer/finished_task.erb

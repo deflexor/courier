@@ -1,0 +1,13 @@
+db/schema.rb
+coverage
+tmp/**
+log
+public/system-maint
+public/backups
+public/robots.txt
+public/cached/*
+public/index.html
+public/files
+config/instance.yml
+.bundle
+vendor/bundle

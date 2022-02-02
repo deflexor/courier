@@ -1,0 +1,16 @@
+<h1>Comments for task <%= @task.id %></h1>
+<table>
+  <tr>
+    <th>Commenter</th>
+    <th>Body</th>
+  </tr>
+  <% for comment in @comments %>
+    <tr>  <td><%=h comment.commenter %></td>
+      <td><%=h comment.body %></td>
+      <td><%= link_to 'Show', courier_task_comment_path(@post, comment) %></td>
+      <td>  <%= link_to 'Edit', edit_courier_taskt_comment_path(@post, comment) %></td>
+      <td>  <%= link_to 'Destroy', courier_task_comment_path(@post, comment), :confirm => 'Are you sure?', :method => :delete %>  </td>
+    </tr> <% end %>
+</table> <br />
+<%= link_to 'New comment', new_courier_task_comment_path(@task) %>
+<%= link_to 'Back to Task', @task %>

@@ -1,0 +1,3 @@
+CourierMailer#new_task
+
+Find me in app/views/courier_mailer/new_task.erb

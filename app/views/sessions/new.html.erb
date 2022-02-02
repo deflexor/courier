@@ -1,0 +1,22 @@
+<% form_tag(session_url) do %>
+<!--
+  <p>
+    <label for="openid_identifier">OpenID URL:</label>
+    <%# text_field_tag "openid_identifier", "", :size => 40 %>
+  </p>
+-->
+  <p>
+    <label for="login">WM логин:</label>
+    <%= text_field_tag "login", "", :size => 20 %>
+  </p>
+
+  <p>
+    <%= submit_tag 'Войти' %>
+<!-- , :disable_with => "Обработка..&hellip;" -->
+  </p>
+
+    <script type="text/javascript">
+      document.getElementById('login').focus();
+    </script>
+
+<% end %>

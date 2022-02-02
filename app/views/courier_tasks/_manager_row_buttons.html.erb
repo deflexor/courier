@@ -1,0 +1,6 @@
+
+<%# link_to t(:edit), edit_courier_task_path(task) %>
+<% if (task.status == 'created' || task.status == 'accepted') && task.manager == current_user %>
+<%= link_to t(:delete), task, :style => 'color:red', :confirm => 'Удалить задание?', :method => :delete %>
+<% end  %>
+<%= link_to 'дубл.', new_courier_task_path(:by => task.id), :title => 'Создать новую поездку на основе этой' %>

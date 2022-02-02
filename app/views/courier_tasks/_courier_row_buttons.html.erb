@@ -1,0 +1,9 @@
+
+<% if task.status == 'created' %>
+<%= link_to 'Получил', accept_courier_task_url(task) %>
+<% end  %>
+
+
+<% if task.status == 'accepted' %>
+<%= link_to 'Выполнил', done_courier_task_url(task) %>
+<% end  %>

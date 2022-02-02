@@ -1,0 +1,60 @@
+<h1>Добавить задание курьеру</h1>
+
+<% form_for(@courier_task) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :manager %> <br />
+    <b><%= current_user.login %></b>
+  </p>
+  <p>
+    <%= f.label :line_expences %><br />
+    <%= f.text_field :line_expences %>
+  </p>
+  <p>
+    <%= f.label :status %><br />
+    <b>Создана</b>
+  </p>
+  <p>
+    <%= f.label :bills %> <small>список счетов dogs через запятую</small><br />
+    <%= f.text_field :bills, :size => 22 %>
+  </p>
+  <p>
+    <%= f.label :client_org %><br />
+    <%= f.text_field :client_org, :size => 52 %>
+  </p>
+  <p>
+    <%= f.label :client_person %><br />
+    <%= f.text_field :client_person, :size => 52 %>
+  </p>
+  <p>
+    <%= f.label :client_phone %><br />
+    <%= f.text_field :client_phone, :size => 16 %>
+  </p>
+  <p>
+    <%= f.label :client_address %> *<br />
+    <%= f.text_area :client_address, :cols => 70, :rows => 4 %>
+  </p>
+  <p>
+    <%= f.label :subject %><br />
+    <%= f.text_area :subject, :cols => 70, :rows => 2 %>
+  </p>
+  <p>
+    <%= f.label :placement %><br />
+    <%= f.text_field :placement, :size => 52 %>
+  </p>
+  <p>
+    <%= f.label :deal_info %><br />
+    <%= f.text_field :deal_info, :size => 52 %>
+  </p>
+  <p>
+    <%= f.label :priority %><br />
+    Желательно <%= f.text_field :priority %>
+    <%# f.select :priority, [['в ближайшие 2 дня'], ['на этой неделе'],['в 2 недели' ]] %>
+  </p>
+  <p>
+    <%= f.submit 'Создать' %>
+  </p>
+<% end %>
+
+<%= link_to 'На первую', courier_tasks_path %>

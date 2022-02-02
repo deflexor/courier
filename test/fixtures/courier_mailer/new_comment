@@ -1,0 +1,3 @@
+CourierMailer#new_comment
+
+Find me in app/views/courier_mailer/new_comment.erb
